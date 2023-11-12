@@ -1,7 +1,5 @@
 import api from "./apiConfig.js";
 
-//this mirrors the backend its a way to set up like "routes" in backend it allows for code to be simple and easy to understand and keep the code "dry". this is pretty much all the end points and Rahul just exported them so that you can reference to the api call using the function name licharacters or createCat ect rather than typing out the logic for the api calls in the components themselves
-
 //get all sailor scouts
 export const getCharacters = async () => {
   try {
