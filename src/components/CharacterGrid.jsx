@@ -46,12 +46,16 @@ const CharacterGrid = () => {
     <>
       <div className="flex flex-wrap justify-center">
         <AddCharacterButton />
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 ">
+        <div
+          className="grid grid-cols-2 md:grid-cols-5 gap-4 flex-wrap"
+          style={{ gridTemplateRows: "repeat(3, 1fr)", height: "400px" }}
+        >
           {characters.map((character) => (
             <Link
               key={character._id}
               to={`/characters/${character._id}`}
               className="bg-white rounded-lg shadow-md"
+              style={{ height: "100%" }}
             >
               <img
                 src={character.image}

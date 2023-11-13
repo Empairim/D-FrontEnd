@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+html {
+    background-image: url("https://i.pinimg.com/originals/b4/8f/2a/b48f2a8b493cf601f77f67e72261a8a4.gif");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  body {
+    height: 100%;
+    min-height: 100vh;
+  }
