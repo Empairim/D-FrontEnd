@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCharacters } from "../services/SailorRoutes";
 import { Link } from "react-router-dom";
+import AddCharacterButton from "./AddCharacter.jsx";
 
 const CharacterGrid = () => {
   const [characters, setCharacters] = useState([]);
@@ -42,44 +43,54 @@ const CharacterGrid = () => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        {characters.map((character) => (
-          <Link
-            key={character._id}
-            to={`/characters/${character._id}`}
-            className="bg-white rounded-lg shadow-md"
-          >
-            <img
-              src={character.image}
-              alt={character.name}
-              className="w-48 h-48 object-cover rounded-t-lg cursor-pointer transform transition-all duration-300 hover:scale-110"
-            />
-            <div className="p-4">
-              <h2
-                className="text-lg text-center font-medium m-3"
-                style={{
-                  backgroundImage:
-                    "url('https://media.tenor.com/yGH5RwRTBwEAAAAi/stars-glitter.gif')",
-                  backgroundPosition: "center",
-                  backgroundSize: "cover",
-                  font: "italic ",
-                }}
-              >
-                {character.englishName}
-              </h2>
-              <p
-                className={`${getClassName(
-                  character._id
-                )} text-center font-cursive`}
-              >
-                {character.moon}
-              </p>
-            </div>
-          </Link>
-        ))}
+    <>
+      <div className="flex flex-wrap justify-center">
+        <AddCharacterButton />
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 ">
+          {characters.map((character) => (
+            <Link
+              key={character._id}
+              to={`/characters/${character._id}`}
+              className="bg-white rounded-lg shadow-md"
+            >
+              <img
+                src={character.image}
+                alt={character.name}
+                className="w-48 h-48 object-cover rounded-t-lg cursor-pointer transform transition-all duration-300 hover:scale-110"
+              />
+              <div className="p-4">
+                <h2
+                  className="text-lg text-center font-medium m-3"
+                  style={{
+                    backgroundImage:
+                      "url('https://media.tenor.com/yGH5RwRTBwEAAAAi/stars-glitter.gif')",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    font: "italic ",
+                  }}
+                >
+                  {character.englishName}
+                </h2>
+                <p
+                  style={{
+                    backgroundImage:
+                      "url('https://media.tenor.com/yGH5RwRTBwEAAAAi/stars-glitter.gif')",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    font: "italic ",
+                  }}
+                  className={`${getClassName(
+                    character._id
+                  )} text-center font-cursive`}
+                >
+                  {character.moon}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

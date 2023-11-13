@@ -53,31 +53,33 @@ const CharacterDetails = () => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="bg-white rounded-lg shadow-md p-4">
-        <img
-          src={character.image}
-          alt={character.name}
-          className="w-max h-max object-cover rounded-t-lg"
-        />
-        <div className="p-4">
-          <h2 className="text-lg text-center font-medium">
-            {character.englishName}
-          </h2>
-          <p
-            className={`${getClassName(
-              character._id
-            )} text-center font-cursive`}
-          >
-            {character.moon}
-          </p>
-          <div className=" flex justify-evenly">
-            <button onClick={handleDelete}>Delete</button>
-            <button>Edit</button>
+    <>
+      <div className="flex justify-center">
+        <div className="bg-white rounded-lg shadow-md p-4">
+          <img
+            src={character.image}
+            alt={character.name}
+            className="w-max h-max object-cover rounded-t-lg"
+          />
+          <div className="p-4">
+            <h2 className="text-lg text-center font-medium">
+              {character.englishName}
+            </h2>
+            <p
+              className={`${getClassName(
+                character._id
+              )} text-center font-cursive`}
+            >
+              {character.moon}
+            </p>
+            <div className=" flex justify-evenly">
+              <button onClick={handleDelete}>Delete</button>
+              <button>Edit</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
